@@ -140,9 +140,9 @@ function server.syncInventory(inv)
     if not player then return false end
     player.Functions.SetPlayerData('items', inv.items)
 
-    -- if accounts.money and accounts.money ~= player.Functions.GetMoney('cash') then
-    --     player.Functions.SetMoney('cash', accounts.money, "Sync money with inventory")
-    -- end
+    if accounts.money and accounts.money ~= player.Functions.GetMoney('cash') then
+        player.Functions.SetMoney('cash', accounts.money, "Sync money with inventory")
+    end
 
     return true
 end
